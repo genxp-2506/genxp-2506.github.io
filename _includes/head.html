@@ -1,0 +1,26 @@
+{% assign page_title = site.title | append: " | " | append: site.subtitle %}
+
+{% if page.title != "Index" %}
+  {% assign page_title = page.title %}
+{% endif %}
+
+<title>{{ page_title }}</title>
+
+<meta name="description" content="{{ site.subtitle }}">
+<meta name="keywords" content="creative, coding, generative, art, shifta, p5, p5js, p5.js, JavaScript">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}">
+<!-- <link rel="stylesheet" href="{{ '/assets/simplelightbox/simple-lightbox.min.css' | relative_url }}"> -->
+
+<link href="https://fonts.googleapis.com/css?family=Raleway:400%7CSource+Code+Pro:400" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
+
+<base target="_blank">
+<script src="{{ '/js/main.js' | relative_url }}"></script>
+
+{% if page.url != "/" %}
+  <script src="{{ '/js/editor-loader.js' | relative_url }}"></script>
+  <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+{% endif %}

@@ -1,0 +1,14 @@
+<div class="body-container">
+  <div class="body-section content-section">
+    <content class="body-section-content">
+      {% unless page.url == "/" %}
+        <h1>{{ page.title }}</h1>
+      {% endunless %}
+      {{ content }}
+    </content>
+  </div>
+
+  <div class="body-section menu-section">
+    {% include menu.html%}
+  </div>
+</div>

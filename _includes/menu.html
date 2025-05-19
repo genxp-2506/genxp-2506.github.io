@@ -1,0 +1,74 @@
+<div id="menu-container" class="menu-container">
+  {% assign title = "Week 01: Getting Started" %}
+  {% capture topics %}
+    programming
+    javascript
+    p5-setup
+    p5-intro
+    drawing
+    variables
+    transformations
+  {% endcapture %}
+  {% include menu-section.html section="week01" title=title topics=topics %}
+
+  {% comment %}
+  {% assign title = "Week 02: Structures" %}
+  {% capture topics %}
+    conditionals
+    patterns
+    counters
+    functions
+    random
+    ide
+    git
+  {% endcapture %}
+  {% include menu-section.html section="week02" title=title topics=topics %}
+
+  {% assign title = "Week 03: Time" %}
+  {% capture topics %}
+    arrays
+    strings
+    objects
+    animations
+    maths
+  {% endcapture %}
+  {% include menu-section.html section="week03" title=title topics=topics %}
+
+  {% assign title = "Week 04: Data Structures" %}
+  {% capture topics %}
+    data
+    images
+    videos
+    sound-files
+    sound-processing
+  {% endcapture %}
+  {% include menu-section.html section="week04" title=title topics=topics %}
+
+  {% assign title = "Datasets: " %}
+  {% capture topics %}
+    beijing
+    crashes
+    inflation
+    stocks
+    trees
+    wine
+  {% endcapture %}
+  {% include menu-section.html section="datasets" title=title topics=topics %}
+
+  {% assign title = "Week 05: Randomness and Simulations" %}
+  {% capture topics %}
+    classes
+    cycles
+    sincos
+    vectors
+    more-random
+  {% endcapture %}
+  {% include menu-section.html section="week05" title=title topics=topics %}
+
+  {% assign title = "Week 06: Systems and Patterns" %}
+  {% capture topics %}
+  {% endcapture %}
+  {% include menu-section.html section="week06" title=title topics=topics %}
+
+  {% endcomment %}
+</div>

@@ -1,0 +1,27 @@
+{% assign topics = include.topics | split: " " %}
+{% assign title = include.title | split: ":" | first %}
+{% assign subtitle = include.title | split: ":" | last %}
+{% assign section = include.section %}
+{% assign open = include.open | default: "" %}
+
+<details class="menu-details" {{ open }}>
+  <summary class="menu-summary">
+    <span class="menu-summary-title">{{ title }}</span>
+    <span class="menu-summary-subtitle">{{ subtitle }}</span>
+  </summary>
+
+  <ul>
+  {% for t in topics %}
+    {% assign _p = site.pages | where_exp:"p", "p.url contains section" %}
+    {% assign p = _p | where_exp:"p", "p.url contains t" | first %}
+    {% assign page_words = p.content | markdownify | strip_html | strip_newlines | number_of_words %}
+
+    {% if page_words > 50 %}
+      <li><a href="{{ p.url | relative_url }}  ">{{ p.title }}</a></li>
+    {% else %}
+      <li><a>{{ p.title }}</a></li>
+    {% endif %}
+    
+  {% endfor %}
+  </ul>
+</details>

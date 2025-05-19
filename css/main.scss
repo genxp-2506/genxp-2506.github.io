@@ -1,0 +1,411 @@
+---
+---
+
+* {
+  box-sizing: border-box;
+}
+
+$mobile-max: 800px;
+
+html {
+  overflow-y: scroll;
+}
+
+html,
+body {
+  --text-color: #666666;
+  --text-color-h: #606060;
+  --text-color-a: #f04422;
+  --text-color-a-h: #fa7055;
+  --bgnd-color: #fff;
+  --bgnd-color-h: #eaeaea;
+  --banner-color: #000;
+  --mobile-max: $mobile-max;
+  --desktop-max: 800px;
+
+  margin: 0;
+  background-color: var(--bgnd-color);
+  font-family: Raleway;
+  font-size: 17px;
+  line-height: 1.8;
+  text-rendering: optimizeLegibility;
+  color: var(--text-color);
+
+  @media screen and (max-width: $mobile-max) {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+a {
+  color: var(--text-color-a);
+  &:visited {
+    color: var(--text-color-a);
+  }
+  &:hover {
+    color: var(--text-color-a-h);
+  }
+}
+
+ul {
+  padding-left: 1rem;
+}
+
+table,
+td,
+th {
+  border: 1px solid var(--text-color);
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 0 1rem;
+}
+
+.language-html{
+  font-size: 16px;
+}
+
+.body-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .top-container {
+    width: 100%;
+    padding: 0;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    color: var(--bgnd-color);
+    background: var(--banner-color);
+
+    a.top-home-link {
+      color: var(--bgnd-color);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--bgnd-color-h);
+        text-decoration: underline;
+      }
+    }
+
+    .top-content {
+      display: block;
+      width: 100%;
+      max-width: var(--desktop-max);
+      margin: 0 auto;
+      margin-left: unquote("max(0%, (80% - var(--desktop-max)) / 2.3)");
+
+      h1 {
+        margin-bottom: 0;
+      }
+      h3 {
+        margin-top: 0;
+      }
+    }
+  }
+  
+  .body-container {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+
+    .body-section.content-section {
+      width: 80%;
+      max-width: var(--desktop-max);
+      margin: 0 auto;
+      margin-left: unquote("max(0%, (80% - var(--desktop-max)) / 2.3)");
+    }
+
+    .body-section.menu-section {
+      width: 20%;
+      height: 100vh;
+      z-index: 80;
+      background-color: var(--bgnd-color);
+
+      .menu-container {
+        height: 80%;
+        position: fixed;
+        padding-left: 10px;
+        margin-bottom: -20px;
+        overflow-y: scroll;
+        border-left: 2px solid #ddd;
+        background-color: var(--bgnd-color);
+
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .menu-container::-webkit-scrollbar {
+        display: none;
+      }
+
+    }
+  }
+
+  .body-section-content {
+    display: block;
+    width: 100%;
+  }
+}
+
+.menu-details {
+  .menu-summary {
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 1;
+    margin-block-start: 0.83em;
+    list-style-position: outside;
+    margin-left: 0.7em;
+    padding-left: 10px;
+    cursor: pointer;
+
+    &::marker {
+      font-size: 0.66em;
+    }
+
+    &:hover {
+      .menu-summary-title {
+        text-decoration: underline;
+      }
+    }
+
+    .menu-summary-subtitle {
+      &::before {
+        content: "";
+        display: block;
+      }
+
+      font-size: 17px;
+      font-weight: 400;
+      margin-block-start: 0.5em;
+    }
+  }
+
+  ul {
+    line-height: 1.2;
+    margin-top: 8px;
+    padding-left: 30px;
+
+    li:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.editor-block-wrapper {
+  width: unquote("max(100%, min(120%, 100vw - 20%))");
+
+  .p5-editor-wrapper {
+    --editor-height: 640px;
+    --editor-y-offset: -42px;
+    --editor-x-offset: -18px;
+  }
+
+  .arduino-editor-wrapper {
+    --editor-height: 640px;
+    --editor-y-offset: -100px;
+    --editor-x-offset: -10px;
+  }
+
+  .editor-wrapper {
+    overflow-y: hidden;
+    position: relative;
+    width: 100%;
+    height: calc(var(--editor-height) + var(--editor-y-offset));
+
+    .editor {
+      position: absolute;
+      top: var(--editor-y-offset);
+      left: var(--editor-x-offset);
+      width: 100%;
+      height: var(--editor-height);
+      border: 0;
+      display: block;
+    }
+  }
+
+  .editor-link {
+    display: block;
+    font-size: 0.9rem;
+  }
+  margin-bottom: 1rem;
+}
+
+.image-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &.image-row-2 {
+    width: 66%;
+    .img-wrapper {
+      width: 45%
+    }
+  }
+
+  .img-wrapper {
+    width: 30%;
+
+    img {
+      cursor: pointer;
+      width: 100%;
+    }
+  }
+}
+
+.scaled-images {
+  width: 100%;
+  max-width: var(--desktop-max);
+
+  img {
+    width: 100%;
+    display: block;
+    margin: 0 auto 1rem;
+  }
+
+  &.w75 {
+    img {
+      width: 75%;
+    }
+  }
+
+  &.w66 {
+    img {
+      width: 66%;
+    }
+  }
+
+  &.w50 {
+    img {
+      width: 50%;
+    }
+  }
+
+  &.w33 {
+    img {
+      width: 33%;
+    }
+  }
+
+  &.left {
+    img {
+      margin-left: 0;
+    }
+  }
+}
+
+.video-container {
+  height: 200px;
+  max-width: var(--desktop-max);
+
+  video {
+    display: block;
+  }
+
+  &.h200 {
+    height: 200px;
+    video {
+      height: 100%;
+    }
+  }
+
+  &.w100 {
+    width: 100%;
+    height: auto;
+    video {
+      width: 100%;
+    }
+  }
+
+  &.w66 {
+    width: 66%;
+    height: auto;
+    video {
+      width: 100%;
+    }
+  }
+}
+
+.youtube-container-wrapper {
+  width: 100%;
+  max-width: var(--desktop-max);
+
+  .youtube-container {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+
+    &.s16x9 {
+      padding-bottom: 56.25%;
+    }
+
+    &.s9x6 {
+      padding-bottom: 66.66%;
+    }
+
+    &.s4x3 {
+      padding-bottom: 75%;
+    }
+
+    iframe, video {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.canvas-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 24px;
+
+  .canvas-container {
+    width: 33%;
+  }
+  canvas {
+    display: block;
+  }
+  .canvas-container > .language-plaintext {
+    user-select: none;
+  }
+}
+
+.sl-overlay {
+  background: var(--bgnd-color) !important;
+}
+
+.sl-close,
+.sl-next,
+.sl-prev {
+  color: var(--text-color-a) !important;
+
+  &:hover {
+    color: var(--text-color-a-h) !important;
+  }
+}
+
+@media print {
+  html,
+  body {
+    --text-color: #000;
+    --text-color-h: #111;
+    --bgnd-color: #fff;
+    --bgnd-color-h: #eee;
+  }
+  .top-container {
+    display: none;
+  }
+}

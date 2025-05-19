@@ -1,0 +1,22 @@
+title: Designing Generative Experiences
+subtitle: 2506 Term
+
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+
+# Local dev settings
+port: 4211
+
+collections:
+  pages:
+    output: true
+    permalink: :path/
+
+# Defaults
+defaults:
+  - scope:
+      type: "pages"
+    values:
+      layout: "page"
