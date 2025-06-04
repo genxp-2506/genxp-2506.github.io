@@ -14,7 +14,7 @@ Let's load an audio file using the [`loadSound()`](https://p5js.org/reference/#/
 
 The `loadSound()` function returns a [`SoundFile`](https://p5js.org/reference/#/p5.SoundFile) object, and we can use its [`play()`](https://p5js.org/reference/#/p5.SoundFile/play) function to play the song whenever we click the mouse:
 
-{% include p5-editor.html id="aLnj1hrsv" %}
+{% include p5-editor.html id="kZLiBslTX" %}
 
 What happens if we click the mouse multiple times? It sounds like the `song` object starts playing the file multiple times over itself.
 
@@ -22,15 +22,15 @@ There are two ways we can fix this.
 
 First, we can specify the file's [`playMode()`](https://p5js.org/reference/#/p5.SoundFile/playMode) to be either `restart` or `untilDone`, and that will make it only play one instance of the file, either by starting the song over or not doing anything until it plays until the end:
 
-{% include p5-editor.html id="yD2bhgfPO" %}
+{% include p5-editor.html id="U8GL6qdUD" %}
 
 The other way is to check first if the object is already playing the file and only call `play()` if it's not. We can also use [`isPlaying()`](https://p5js.org/reference/#/p5.SoundFile/isPlaying) to change the background color as an indication of the play state:
 
-{% include p5-editor.html id="cKAbzWY2a" %}
+{% include p5-editor.html id="hABEaYEA1" %}
 
 Since we're already checking whether the sound is playing when we get a mouse click, we can also easily pause the song on alternate clicks. This way the canvas acts like a play/pause button. Every time there's a click, pause if it's playing, and continue playing if it's paused.
 
-{% include p5-editor.html id="0cHibgOcU" %}
+{% include p5-editor.html id="TGWwSbhyR" %}
 
 ## Seeing Sound
 
@@ -64,6 +64,6 @@ This value then goes through `floor()` and `constrain()` in order to guarantee t
 
 After that we use it to index into our arrays of diameters and draw an ellipse whose size is proportional to the volume of the current sample being played:
 
-{% include p5-editor.html id="5DyVqATW_" %}
+{% include p5-editor.html id="TPQWZmkzZ" %}
 
 Try it out, and remember to adjust the `DELAY` value to get better synchronization if using bluetooth speakers/earbuds or if the browser is overloaded.

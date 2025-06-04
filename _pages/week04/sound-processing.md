@@ -66,7 +66,7 @@ These are the exact connections shown in the diagram above.
 
 Our `p5.Amplitude` object can now be used at every iteration of our `draw()` function to get the sound's amplitude and display it visually using ellipses:
 
-{% include p5-editor.html id="Dvc9L6y-_" %}
+{% include p5-editor.html id="-DxgXbZeG" %}
 
 This is similar to how we displayed audio information in the [previous section](../sound-files/) using the [`getPeaks()`](https://p5js.org/reference/#/p5.SoundFile/getPeaks) function from the `SoundFile` object directly.
 
@@ -128,7 +128,7 @@ mFilter.connect(mAmp);
 
 And use `mouseX` to pick the filter's center frequency $$f$$:
 
-{% include p5-editor.html id="XS4zAXpiS" %}
+{% include p5-editor.html id="iM1QxgAch" %}
 
 ## FFT
 
@@ -152,6 +152,6 @@ The `p5.FFT` object also has a [`getEnergy()`](https://p5js.org/reference/#/p5.F
 
 Knowing this, we can use the `p5.FFT` object and the `FFT.analyze()` and `getEnergy()` functions to visualize the effects of the filter from the previous example:
 
-{% include p5-editor.html id="J1rT_BiA8" %}
+{% include p5-editor.html id="5qBkXuygI" %}
 
 Instead of just drawing one circle, we now draw five, one for each of the predefined frequency ranges, and as we move the mouse from the left to the right we will see movement go from the bottom circles to the top, which correspond to the higher frequency ranges.
