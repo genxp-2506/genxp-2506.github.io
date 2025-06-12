@@ -9,7 +9,7 @@ One of the simplest ways to create a cycle is to think of a way to periodically 
   <img src="{{ 'assets/images/week05/clock.jpg' |relative_url }}">
 </div>
 
-Before we create any cycles, let's just visualize a variable that keeps growing and growing in p5.js: [`frameCount`](https://p5js.org/reference/#/p5/frameCount). This variable keeps track of how many times the `draw()` function has executed during the execution of our program.
+Before we create any cycles, let's just visualize a variable that keeps growing and growing in p5.js: [`frameCount`](https://p5js.org/reference/p5/frameCount). This variable keeps track of how many times the `draw()` function has executed during the execution of our program.
 
 In our sketch we are using it to set the horizontal position of the circle, but since `frameCount` grows unbounded, the `x` position will also keep growing and eventually the circle leaves the screen.
 
@@ -19,7 +19,7 @@ Now, let's turn this variable that grows and grows and grows into a cyclic varia
 
 We just saw how to do this using the [modulo operator](../../week03/maths/) (`%`), but let's review.
 
-Since we want to create a sequence that repeats after `width` elements, like: $$[0,1,2,...,width - 2,width - 1, 0,1,2,...,width - 2,width-1, 0,1,...]$$, we can just use the remainder of the natural numbers when they are divided by `width`. And in our case, using p5.js, the [`frameCount`](https://p5js.org/reference/#/p5/frameCount) variable gives us a sequence of the natural numbers.
+Since we want to create a sequence that repeats after `width` elements, like: $$[0,1,2,...,width - 2,width - 1, 0,1,2,...,width - 2,width-1, 0,1,...]$$, we can just use the remainder of the natural numbers when they are divided by `width`. And in our case, using p5.js, the [`frameCount`](https://p5js.org/reference/p5/frameCount) variable gives us a sequence of the natural numbers.
 
 {% include p5-editor.html id="IWnsMnLdZ" %}
 
@@ -43,7 +43,7 @@ Let's start by creating a variable called `periodSec` that keeps track of how of
 
 $$periodFrames = periodSeconds \times frameRate$$
 
-`period` is the number of frames our action will last before it repeats. `frameRate` can be obtained in p5.js using the [`getTargetFrameRate()`](https://p5js.org/reference/#/p5/getTargetFrameRate) function.
+`period` is the number of frames our action will last before it repeats. `frameRate` can be obtained in p5.js using the [`getTargetFrameRate()`](https://p5js.org/reference/p5/getTargetFrameRate) function.
 
 Now, we can think about the speed of our circle in units of $$\frac{pixels}{frames}$$ as:
 

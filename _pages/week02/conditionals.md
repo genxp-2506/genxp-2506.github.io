@@ -188,4 +188,4 @@ let overlap = mouseX > oRectX && mouseX < oRightEdge &&
 
 {% include p5-editor.html id="RIBXWiq2-" %}
 
-This could still be improved to account for the cases where it wrongly detects an overlap when the circle moves near the corners of the rectangle (a literal [corner case](https://en.wikipedia.org/wiki/Corner_case)), but we'll wait until we see [functions](../functions/) and a little bit of [trigonometry](../../week04/vectors/).
+This could still be improved to account for the cases where it wrongly detects an overlap when the circle moves near the corners of the rectangle (a literal [corner case](https://en.wikipedia.org/wiki/Corner_case)), but we'll wait until we see [functions](../functions/) and a little bit of [trigonometry](../../week05/vectors/).

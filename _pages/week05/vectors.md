@@ -207,7 +207,7 @@ If we image two points on our screen, with coordinates $$(x_0, y_0)$$ and $$(x_1
   <img src = "{{ '/assets/images/week05/trigonometry-03.jpg' | relative_url }}"/>
 </div>
 
-In this sketch the distance between two moving points is calculated using the formula for [Euclidean Distance](https://en.wikipedia.org/wiki/Euclidean_distance) $$\sqrt{(x_1 - x_0)^2 + (y_1 - y_0)^2}$$ and the p5.js function [`dist()`](https://p5js.org/reference/#/p5/dist). When those distances are used as the diameter for two circles centered on the canvas, we can see that they are exactly the same:
+In this sketch the distance between two moving points is calculated using the formula for [Euclidean Distance](https://en.wikipedia.org/wiki/Euclidean_distance) $$\sqrt{(x_1 - x_0)^2 + (y_1 - y_0)^2}$$ and the p5.js function [`dist()`](https://p5js.org/reference/p5/dist). When those distances are used as the diameter for two circles centered on the canvas, we can see that they are exactly the same:
 
 {% include p5-editor.html id="ZpMRkDtCM" %}
 
@@ -233,7 +233,7 @@ We can use the heading angle of a moving object to rotate its shape and emphasiz
 
 ## Vectors
 
-p5.js actually has a class called [`Vector`](https://p5js.org/reference/#/p5.Vector) that can help with geometry calculations like these. The simplest way to think about a vector is that it specifies a point $$(x, y)$$ in space, relative to the $$(0, 0)$$ origin. Vectors are actually more than that, but to do the distance and angle calculations that we've seen, it's fine to think of vectors as points with an $$(x, y)$$ coordinate.
+p5.js actually has a class called [`Vector`](https://p5js.org/reference/p5/p5.Vector/) that can help with geometry calculations like these. The simplest way to think about a vector is that it specifies a point $$(x, y)$$ in space, relative to the $$(0, 0)$$ origin. Vectors are actually more than that, but to do the distance and angle calculations that we've seen, it's fine to think of vectors as points with an $$(x, y)$$ coordinate.
 
 This drawing shows two vectors/points and if we subtract $$_1$$ from $$v_0$$, we get a third vector that holds information about the distance and direction between them.
 

@@ -20,7 +20,7 @@ We can use variables, which helps a bit:
 
 These all work, but there's another way to do this, which might seem more difficult at first, but once we get used to it, will allow us to perform other kinds of transformations on our shapes, like rotations and scaling.
 
-Instead of changing the `x` and `y` locations of where we want to draw our shape on our canvas, we can change the location of our canvas' origin. We'll always draw our shapes at the $$(0, 0)$$ location, but we'll change where that location is in our canvas. We can use the p5.js function [`translate()`](https://p5js.org/reference/#/p5/translate) to change our origin location.
+Instead of changing the `x` and `y` locations of where we want to draw our shape on our canvas, we can change the location of our canvas' origin. We'll always draw our shapes at the $$(0, 0)$$ location, but we'll change where that location is in our canvas. We can use the p5.js function [`translate()`](https://p5js.org/reference/p5/translate) to change our origin location.
 
 {% include p5-editor.html id="5rd2HyU5c" %}
 
@@ -44,7 +44,7 @@ We can always *undo* our translations by using negative values, so calling `tran
 
 {% include p5-editor.html id="Xc1_4qBVQ" %}
 
-An easier way to do this is to use the [`push()`](https://p5js.org/reference/#/p5/push) and [`pop()`](https://p5js.org/reference/#/p5/pop) functions. When we can `push()` we are telling p5.js to pay extra close attention to our transformations and keep track of them for us. After we are done drawing, we call `pop()`, which now tells p5.js to undo all of the transformations made after `push()`. Or, in other words, the `push()` function tells p5.js to *save* the current state of our transformations, and the `pop()` function tells p5.js to go back to that state.
+An easier way to do this is to use the [`push()`](https://p5js.org/reference/p5/push) and [`pop()`](https://p5js.org/reference/p5/pop) functions. When we can `push()` we are telling p5.js to pay extra close attention to our transformations and keep track of them for us. After we are done drawing, we call `pop()`, which now tells p5.js to undo all of the transformations made after `push()`. Or, in other words, the `push()` function tells p5.js to *save* the current state of our transformations, and the `pop()` function tells p5.js to go back to that state.
 
 So instead of doing this to recover our initial origin:
 ```js
@@ -69,7 +69,7 @@ It's good practice to always *wrap* our translations and transformations with ca
 
 The other advantage of using `translate()` with `push()`/`pop()` is that it's the easiest way to rotate our custom shapes.
 
-The p5.js [`rotate()`](https://p5js.org/reference/#/p5/rotate) function rotates our canvas around its origin.
+The p5.js [`rotate()`](https://p5js.org/reference/p5/rotate) function rotates our canvas around its origin.
 
 If we want to draw two hearts rotated by $$45^{\circ}$$ at $$(100, 100)$$ and $$(250, 250)$$, we might try:
 ```js
@@ -113,7 +113,7 @@ pop();
 
 ## More Transformations
 
-Once we get used to how `translate()`, `push()` and `pop()` work we can even use them in conjunction with [`scale()`](https://p5js.org/reference/#/p5/scale) to change the size of our objects without having to recalculate new coordinates and lengths for our basic shapes.
+Once we get used to how `translate()`, `push()` and `pop()` work we can even use them in conjunction with [`scale()`](https://p5js.org/reference/p5/scale) to change the size of our objects without having to recalculate new coordinates and lengths for our basic shapes.
 
 Again, we just have to remember that `scale()` is actually scaling our canvas and not our shapes, and that it works relative to the origin, where it grows (or shrinks) our shapes away from (or towards) the origin. Similar to how we used `rotate()`, if we want to change the size of shapes that are drawn in different places of our canvas, we first have to `translate()` to those locations, `scale()` the canvas and then draw:
 ```js

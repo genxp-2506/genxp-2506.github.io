@@ -11,7 +11,7 @@ In this tutorial we are going to take a look at $$2$$ strategies/techniques/func
 
 Let's consider a simple animation of a circle that moves across our canvas.
 
-We'll use the p5.js [`frameCount`](https://p5js.org/reference/#/p5/frameCount) variable to set the `x` location of our circle. This variable keeps track of how many times the `draw()` function has executed in our program, and since it starts at $$0$$ and grows indefinitely, our circle will start at $$0$$ and go infinitely to the right, eventually leaving the screen.
+We'll use the p5.js [`frameCount`](https://p5js.org/reference/p5/frameCount) variable to set the `x` location of our circle. This variable keeps track of how many times the `draw()` function has executed in our program, and since it starts at $$0$$ and grows indefinitely, our circle will start at $$0$$ and go infinitely to the right, eventually leaving the screen.
 
 {% include p5-editor.html id="sq5gwzjWb" %}
 
@@ -47,7 +47,7 @@ More generally, if we have a variable `X` that grows and grows and grows and we 
 
 If we want to repeat the sequence after `width` elements, so, turn $$[0,1,2,3,4,...,10,11,12,13,...,20,21,22,23,...]$$ into $$[0,1,2,...,width - 2,width - 1, 0,1,2,...,width - 2,width-1, 0,1,...]$$, we can just use the remainder of the natural numbers when they are divided by `width`.
 
-In our case, using p5.js, the [`frameCount`](https://p5js.org/reference/#/p5/frameCount) variable already gives us a sequence of the natural numbers. And, since in this example we want the circle to reset to $$0$$ once it gets to `width`, all we have to do is set the `x` position of our circle to be `frameCount % width`.
+In our case, using p5.js, the [`frameCount`](https://p5js.org/reference/p5/frameCount) variable already gives us a sequence of the natural numbers. And, since in this example we want the circle to reset to $$0$$ once it gets to `width`, all we have to do is set the `x` position of our circle to be `frameCount % width`.
 
 {% include p5-editor.html id="KanH50nEv" %}
 
@@ -72,7 +72,7 @@ We can just create a variable that will count the number of clicks and use the m
 
 And what if we want the background color to change automatically every second?
 
-There is a function in p5.js called [`second()`](https://p5js.org/reference/#/p5/second) that gives us the number of seconds from our computer's clock. This number itself repeats after $$60$$ values, but since we still only have $$3$$ options for colors, we'll still use `% 3`.
+There is a function in p5.js called [`second()`](https://p5js.org/reference/p5/second) that gives us the number of seconds from our computer's clock. This number itself repeats after $$60$$ values, but since we still only have $$3$$ options for colors, we'll still use `% 3`.
 
 {% include p5-editor.html id="0-XZ391uE" %}
 
@@ -125,7 +125,7 @@ let mDiam = maxDiam - mDiamInv + minDiam;
 
 The logic for calculating the circle diameter is getting a bit complicated...
 
-This is where [`map()`](https://p5js.org/reference/#/p5/map) comes in. It's a function that maps a value from one range to another.
+This is where [`map()`](https://p5js.org/reference/p5/map) comes in. It's a function that maps a value from one range to another.
 
 If we want to map the value of `mouseY` from `height` values to `diameter` values, $$[0, height] \rightarrow [40, 200]$$, we can just write:
 
@@ -145,7 +145,7 @@ let mDiam = map(mouseY, 0, height, maxDiam, minDiam);
 
 ## Mapping Between Ranges
 
-[`map()`](https://p5js.org/reference/#/p5/map) is useful in other situations too. Let's say we want to draw evenly spaced vertical lines on our canvas.
+[`map()`](https://p5js.org/reference/p5/map) is useful in other situations too. Let's say we want to draw evenly spaced vertical lines on our canvas.
 
 We have a `for()` loop that counts from $$0$$ to $$16$$ and with `map()` we can just transform the counter variable to the position we want because we know our counter has a range $$[0, 16]$$ and our line positions will have a range $$[0, width]$$:
 

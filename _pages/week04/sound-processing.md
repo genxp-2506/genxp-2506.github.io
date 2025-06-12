@@ -2,7 +2,7 @@
 title: Sound Processing
 ---
 ## NOTE:
-To use the sound library, we have to make sure the [p5.sound library](https://p5js.org/reference/#/libraries/p5.sound) is included in our project's `index.html` file after the p5.js file. It will look something like this:
+To use the sound library, we have to make sure the [p5.sound library](https://p5js.org/reference/p5.sound/) is included in our project's `index.html` file after the p5.js file. It will look something like this:
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
@@ -11,7 +11,7 @@ To use the sound library, we have to make sure the [p5.sound library](https://p5
 
 ## Inputs & Outputs
 
-We've already looked at how to use the [p5.sound](https://p5js.org/reference/#/libraries/p5.sound) library to [play pre-recorded sounds](../sound-files/) from files, now, let's look at how to use other parts of the library to further process these files.
+We've already looked at how to use the [p5.sound](https://p5js.org/reference/p5.sound/) library to [play pre-recorded sounds](../sound-files/) from files, now, let's look at how to use other parts of the library to further process these files.
 
 The p5.sound library, along with many other creative coding audio processing toolkits, was designed to somewhat mimic a physical audio processing setup. Objects have input and output ports that receive/send the same kind of information (digital audio samples); each module does some kind of processing or manipulation on its inputs before sending them to its outputs; and modules can easily be chained together to create more complex sound effects.
 
@@ -33,7 +33,7 @@ Let's start by looking at one of the simpler modules.
 
 ## Amplitude
 
-[Amplitude](https://p5js.org/reference/#/p5.Amplitude). is one of the "_display_" modules that don't output audio, but instead can be used to show information about our signal.
+[Amplitude](https://p5js.org/reference/p5.sound/p5.Amplitude/). is one of the "_display_" modules that doesn't output audio, but instead can be used to show information about our signal.
 
 In this case, the Amplitude module will give us an audio signal's amplitude (how loud it is), as a number between $$0$$ and $$1$$:
 
@@ -41,9 +41,9 @@ In this case, the Amplitude module will give us an audio signal's amplitude (how
   <img src="{{ '/assets/images/week04/sound-processing-02.jpg' | relative_url }}"/>
 </div>
 
-By default, any [`p5.SoundFile`](https://p5js.org/reference/#/p5.SoundFile) object we create will send its output to the [`p5.soundOut`](https://p5js.org/reference/#/p5/soundOut) module/object, which is our final output: the signal that goes to our speaker.
+By default, any [`p5.SoundFile`](https://p5js.org/reference/p5.sound/p5.SoundFile/) object we create will send its output to the [`p5.soundOut`](https://p5js.org/reference/p5/soundOut) module/object, which is our final output: the signal that goes to our speaker.
 
-And, also by default, the Amplitude module gets its input from this same [`p5.soundOut`](https://p5js.org/reference/#/p5/soundOut) object.
+And, also by default, the Amplitude module gets its input from this same [`p5.soundOut`](https://p5js.org/reference/p5/soundOut) object.
 
 So, technically, instantiating these two objects like this, would be enough to have them connected properly:
 
@@ -68,9 +68,9 @@ Our `p5.Amplitude` object can now be used at every iteration of our `draw()` fun
 
 {% include p5-editor.html id="-DxgXbZeG" %}
 
-This is similar to how we displayed audio information in the [previous section](../sound-files/) using the [`getPeaks()`](https://p5js.org/reference/#/p5.SoundFile/getPeaks) function from the `SoundFile` object directly.
+This is similar to how we displayed audio information in the [previous section](../sound-files/) using the [`getPeaks()`](https://p5js.org/reference/p5.SoundFile/getPeaks/) function from the `SoundFile` object directly.
 
-That method works if all we want to do is visualize the information from a single file. If, instead, we want to mix different sound sources first (multiple files, microphone, effects), we'll have to use an [Amplitude](https://p5js.org/reference/#/p5.Amplitude) object to visualize the resulting sound wave that is being sent to the speakers, 
+That method works if all we want to do is visualize the information from a single file. If, instead, we want to mix different sound sources first (multiple files, microphone, effects), we'll have to use an [Amplitude](https://p5js.org/reference/p5.sound/p5.Amplitude/) object to visualize the resulting sound wave that is being sent to the speakers, 
 
 ## Filters
 
@@ -80,7 +80,7 @@ Now that we can visualize our sound, let's add an actual processing module to ma
   <img src="{{ '/assets/images/week04/sound-processing-03.jpg' | relative_url }}"/>
 </div>
 
-The [`p5.Filter`](https://p5js.org/reference/#/p5.Filter) module allows us to filter our audio signals based on frequencies.
+The [`p5.Filter`](https://p5js.org/reference/p5.sound/p5.Filter/) module allows us to filter our audio signals based on frequencies.
 
 Some common types of filter that we can implement with this module are: `lowpass`, `highpass`, `bandpass` and `notch`.
 
@@ -134,7 +134,7 @@ And use `mouseX` to pick the filter's center frequency $$f$$:
 
 We can definitely hear the differences in the sound as we move the mouse around and change the filter's cutoff frequency, but let's look at a module that will let us visualize the filter's effect as well.
 
-The [`p5.FFT`](https://p5js.org/reference/#/p5.FFT) class implements the Fast Fourier Transform algorithm, which can be used to separate our audio signal into individual frequency components.
+The [`p5.FFT`](https://p5js.org/reference/p5.sound/p5.FFT/) class implements the Fast Fourier Transform algorithm, which can be used to separate our audio signal into individual frequency components.
 
 We can replace the `Amplitude` module in the last example with the `FFT` module:
 
@@ -142,13 +142,13 @@ We can replace the `Amplitude` module in the last example with the `FFT` module:
   <img src="{{ '/assets/images/week04/sound-processing-08.jpg' | relative_url }}"/>
 </div>
 
-And now, when we call [`FFT.analyze()`](https://p5js.org/reference/#/p5.FFT/analyze), this module calculates an array of $$1024$$ values, where each value corresponds to how much of a particular audible frequency was present in the original audio signal.
+And now, when we call [`FFT.analyze()`](https://p5js.org/reference/p5.FFT/analyze/), this module calculates an array of $$1024$$ values, where each value corresponds to how much of a particular audible frequency was present in the original audio signal.
 
 So, the first value of the array corresponds to frequencies between $$0$$ and $$20$$ Hz, the second value is for frequencies between $$20$$ and $$40$$ Hz, and so on, all the way to the 1024th value that corresponds to frequencies greater than $$22,000$$ Hz or $$22$$ kHz.
 
 If the value in a particular position is $$0$$, that means the original audio signal had no sound in that frequency. On the other hand, if it's $$255$$, it means that the original signal had a very strong sound with that frequency.
 
-The `p5.FFT` object also has a [`getEnergy()`](https://p5js.org/reference/#/p5.FFT/getEnergy) function that returns the amount of a specific frequency or frequency range present in the audio signal. It can also be called with one of five pre-defined range strings, to get the amount of energy in the `bass`, `lowMid`, `mid`, `highMid` and  `treble` frequency ranges.
+The `p5.FFT` object also has a [`getEnergy()`](https://p5js.org/reference/p5.FFT/getEnergy/) function that returns the amount of a specific frequency or frequency range present in the audio signal. It can also be called with one of five pre-defined range strings, to get the amount of energy in the `bass`, `lowMid`, `mid`, `highMid` and  `treble` frequency ranges.
 
 Knowing this, we can use the `p5.FFT` object and the `FFT.analyze()` and `getEnergy()` functions to visualize the effects of the filter from the previous example:
 

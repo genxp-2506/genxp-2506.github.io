@@ -14,7 +14,7 @@ function draw() {
 }
 ```
 
-Just to reiterate what p5.js does with this code: all of the commands inside the `setup()` function run just once. This is where we setup the canvas size, maybe set initial values to some variables, draw the background for the first time, set up any of the drawing modes, like [`rectMode`](https://p5js.org/reference/#/p5/rectMode), [`colorMode`](https://p5js.org/reference/#/p5/colorMode), etc.
+Just to reiterate what p5.js does with this code: all of the commands inside the `setup()` function run just once. This is where we setup the canvas size, maybe set initial values to some variables, draw the background for the first time, set up any of the drawing modes, like [`rectMode`](https://p5js.org/reference/p5/rectMode), [`colorMode`](https://p5js.org/reference/p5/colorMode), etc.
 
 After the `setup()` function runs, p5.js takes our `draw()` function and runs all the commands that are inside of it over and over and over again, at a specific rate. For most of the code we have run so far we haven't noticed this re-draw because we draw the same shapes every time the `draw()` function runs.
 
@@ -40,7 +40,7 @@ Cooool !!!
 
 ## Frame Count
 
-Instead of using a variable called `xPos` we could have called the p5.js variable [`frameCount`](https://p5js.org/reference/#/p5/frameCount). This variable keeps track of how many times the `draw()` function has executed and can be easily used for creating animations:
+Instead of using a variable called `xPos` we could have called the p5.js variable [`frameCount`](https://p5js.org/reference/p5/frameCount). This variable keeps track of how many times the `draw()` function has executed and can be easily used for creating animations:
 
 {% include p5-editor.html id="L9FIYPY2_" %}
 
@@ -90,7 +90,7 @@ In addition to mapping $$[0, 59] \rightarrow [20, width]$$ for the diameter, we 
 
 {% include p5-editor.html id="thbVYgT-l" %}
 
-We can add other elements to this by also mapping the milliseconds amount to a different ellipse's diameter. We unfortunately don't have a function that gives us the current time's milliseconds, but [`millis()`](https://p5js.org/reference/#/p5/millis) gives us the number of milliseconds that have elapsed since we started our sketch. It keeps growing, so we'll use `mod(%)` to keep it between $$[0, 999]$$.
+We can add other elements to this by also mapping the milliseconds amount to a different ellipse's diameter. We unfortunately don't have a function that gives us the current time's milliseconds, but [`millis()`](https://p5js.org/reference/p5/millis) gives us the number of milliseconds that have elapsed since we started our sketch. It keeps growing, so we'll use `mod(%)` to keep it between $$[0, 999]$$.
 
 Then, instead of mapping $$[0, 999] \rightarrow [20, width]$$, we'll map this value to be between the other ellipse's diameter and `width`, so $$[0, 999] \rightarrow [secondDiam, width]$$.
 

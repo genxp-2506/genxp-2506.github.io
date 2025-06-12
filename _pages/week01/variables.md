@@ -54,7 +54,7 @@ Variables not only make it so we don't have to remember specific numbers in our 
 
 Like already mentioned, variable values can change during the execution of our program, but they can also serve as a way for us to set parameters for repeatable or modular computation.
 
-Let's look at an example. Imagine we have just created this logo using some basic p5.js [`arc()`](https://p5js.org/reference/#/p5/arc) shapes:
+Let's look at an example. Imagine we have just created this logo using some basic p5.js [`arc()`](https://p5js.org/reference/p5/arc) shapes:
 {% include p5-editor.html id="tcLVwsWin" %}
 
 Some of the shapes overflow our canvas area, but that's fine. Our logo can be embedded in any area that is exactly $$400$$ by $$400$$ pixels.
@@ -74,14 +74,14 @@ Now we can just update those two variables: `centerX` and `centerY` every time w
 
 This is better, but we can improve this by using variables to make our whole design more flexible and independent of specific sizes.
 
-For example, instead of typing the values for the center location of our canvas, p5.js provides variables that keep track of the size of our canvas for us. The p5.js variables [`width`](https://p5js.org/reference/#/p5/width) and [`height`](https://p5js.org/reference/#/p5/height) will always have the dimensions of our canvas, even if they change, so it's always a better idea to use these when drawing shapes at relative locations in our canvas:
+For example, instead of typing the values for the center location of our canvas, p5.js provides variables that keep track of the size of our canvas for us. The p5.js variables [`width`](https://p5js.org/reference/p5/width) and [`height`](https://p5js.org/reference/p5/height) will always have the dimensions of our canvas, even if they change, so it's always a better idea to use these when drawing shapes at relative locations in our canvas:
 
 ```js
 centerX = width / 2;
 centerY = height / 2;
 ```
 
-We can also use the p5.js [`min()`](https://p5js.org/reference/#/p5/min) function to keep track of the smallest of the dimensions (`width` or `height`) and us it to limit the circumference of our largest `arc()`:
+We can also use the p5.js [`min()`](https://p5js.org/reference/p5/min) function to keep track of the smallest of the dimensions (`width` or `height`) and us it to limit the circumference of our largest `arc()`:
 {% include p5-editor.html id="14yHQ5x-t" %}
 
 We can change the size of our canvas now and our logo will mostly follow. Try changing the canvas dimension above to see what happens ☝️ .
@@ -90,7 +90,7 @@ Let's continue adjusting our design by changing our code to use variables for mo
 
 The circumferences of $$100$$, $$200$$ and $$300$$ in the original code can be turned into `minDim / 4`, `minDim / 2` and `3 * minDim / 4`, respectively, for one-quarter, one-half and three-quarters of the smallest canvas dimension.
 
-We'll also use `minDim / 12` for our [strokeWeight()](https://p5js.org/reference/#/p5/strokeWeight).
+We'll also use `minDim / 12` for our [strokeWeight()](https://p5js.org/reference/p5/strokeWeight).
 
 These changes should make our whole logo fit our canvas independent of the exact size of the canvas:
 {% include p5-editor.html id="Or8g11cpC" %}
@@ -105,7 +105,7 @@ Even if we have to use very particular values, like $$386$$ and $$494$$ for our 
 
 Variables can hold many kinds of values, not just single numbers.
 
-For example, they can also hold p5.js [`color()`](https://p5js.org/reference/#/ p5/color) information.
+For example, they can also hold p5.js [`color()`](https://p5js.org/reference/p5/color) information.
 
 This way we can experiment with different palettes without having to keep track of exact color values all over our code:
 
@@ -165,4 +165,4 @@ If we use these $$2$$ new variables to draw a second ellipse, we get something l
 
 {% include p5-editor.html id="5-XDVKZk7" %}
 
-There are other variables available for us in our p5.js sketches, like [`key`](https://p5js.org/reference/#/p5/key), which holds the value of the last-pressed key on the keyboard, or, [`pixels`](https://p5js.org/reference/#/p5/pixels), which is a variable that holds a list of color values, one for each pixel of our canvas.
+There are other variables available for us in our p5.js sketches, like [`key`](https://p5js.org/reference/p5/key), which holds the value of the last-pressed key on the keyboard, or, [`pixels`](https://p5js.org/reference/p5/pixels), which is a variable that holds a list of color values, one for each pixel of our canvas.

@@ -5,7 +5,7 @@ title: Arrays
 
 Before we start looking at *arrays*, the main topic of this page, let's review a couple of concepts that will make it easier for us to visualize what they are and how to use them.
 
-We saw the p5.js variables [`mouseX`](https://p5js.org/reference/#/p5/mouseX) and [`mouseY`](https://p5js.org/reference/#/p5/mouseY) when we looked at [variables](../../week01/variables/), [conditionals](../../week02/conditionals/) and [functions](../../week02/functions/).
+We saw the p5.js variables [`mouseX`](https://p5js.org/reference/p5/mouseX) and [`mouseY`](https://p5js.org/reference/p5/mouseY) when we looked at [variables](../../week01/variables/), [conditionals](../../week02/conditionals/) and [functions](../../week02/functions/).
 
 These variables always hold the `x` and `y` position of our mouse during the execution of our sketch, so if we use them inside our `draw()` function to draw an ellipse, it will look like the ellipse is following our mouse.
 

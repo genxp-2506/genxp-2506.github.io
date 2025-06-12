@@ -13,7 +13,7 @@ Note the use of a variable to set the circle diameter:
 
 One way to add variability to our pattern would be to pick a slightly different value for the diameter or the color of each of our circles.
 
-Let's start with color. We are going to see how we can use [`random()`](https://p5js.org/reference/#/p5/random) to select a value from a pre-determined set of options for the color of our ellipses.
+Let's start with color. We are going to see how we can use [`random()`](https://p5js.org/reference/p5/random) to select a value from a pre-determined set of options for the color of our ellipses.
 
 For example, let's say we want half of them to be black and the other half to be white, but we don't want all the black ones in a row, and then the white ones, because that would look like a chessboard and it's boring.
 
