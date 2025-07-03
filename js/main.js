@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // which menu to keep open
   const url = window.location.href;
-  let menuWeek = 6;
+  let menuWeek = 7;
   const weekPos = url.indexOf("week");
   const dataPos = url.indexOf("datasets");
   const hashNums = window.location.hash.match(/\d+/g);
